@@ -1,4 +1,3 @@
-
 {
   description = "Rust dev shell";
 
@@ -20,26 +19,27 @@
     devShells.${system}.default = pkgs.mkShell {
       packages = [
         rust
-	pkgs.llvmPackages.bintools
-	pkgs.wasm-pack
+        pkgs.llvmPackages.bintools
         pkgs.just
         pkgs.neovim
         pkgs.bacon
-        pkgs.zsh
-        pkgs.cargo-tarpaulin
-	pkgs.dioxus-cli
-	pkgs.wasm-bindgen-cli_0_2_108
-	pkgs.nodejs_24
-	pkgs.binaryen
-
+        pkgs.openssl
       ];
 
       nativeBuildInputs = [
-        pkgs.pkg-config
-        pkgs.gcc
+        pkgs.pkg-config         
+	pkgs.gcc
       ];
-	 CARGO_TARGET_WASM32_UNKNOWN_UNKNOWN_LINKER = "lld"; 
+
+	shellHook = ''
+        export PATH="$HOME/.cargo/bin:$PATH"
+      '';
+
+      OPENSSL_DIR = "${pkgs.openssl.dev}";
+      OPENSSL_LIB_DIR = "${pkgs.openssl.out}/lib";
+      OPENSSL_INCLUDE_DIR = "${pkgs.openssl.dev}/include";
+
+      CARGO_TARGET_WASM32_UNKNOWN_UNKNOWN_LINKER = "lld"; 
     };
   };
 }
-
