@@ -1,0 +1,20 @@
+@keyframes screen-draw {
+  from {
+    clip-path: inset(-10% -10% 100% -10%);
+  }
+  to {
+    clip-path: inset(-10% -10% -10% -10%);
+  }
+}
+
+.ani-load-init {
+  animation: screen-draw 1.5s steps(12) forwards;
+}
+
+.ani-load-trans-first {
+    animation: screen-draw 1.5s steps(24) 1.5s both;
+}
+
+.ani-load-trans-second {
+    animation: screen-draw 0.25s steps(8) 3s both;
+}

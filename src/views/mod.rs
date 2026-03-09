@@ -1,18 +1,23 @@
-//! The views module contains the components for all Layouts and Routes for our app. Each layout and route in our [`Route`]
-//! enum will render one of these components.
-//!
-//!
-//! The [`Home`] and [`Blog`] components will be rendered when the current route is [`Route::Home`] or [`Route::Blog`] respectively.
-//!
-//!
-//! The [`Navbar`] component will be rendered on all pages of our app since every page is under the layout. The layout defines
-//! a common wrapper around all child routes.
-
-mod home;
-pub use home::Home;
-
-mod blog;
-pub use blog::Blog;
+pub mod popup_widget;
+mod socials;
+pub use socials::Socials;
 
 mod navbar;
 pub use navbar::Navbar;
+
+mod three_d;
+pub use three_d::Art;
+mod contact;
+pub use contact::Contact;
+mod photos;
+pub use photos::Projects;
+mod who_am_i;
+pub use who_am_i::WhoAmI;
+mod under_construction;
+
+pub mod gif_links;
+mod info_widget;
+pub use info_widget::InfoWidget;
+
+mod scroll_bar;
+pub use scroll_bar::CustomScrollBar;

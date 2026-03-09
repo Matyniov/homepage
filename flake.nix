@@ -11,6 +11,7 @@
     system = "x86_64-linux";
     pkgs = import nixpkgs { inherit system; };
 
+    
     rust = with fenix.packages.${system}; combine [
             stable.toolchain
             targets.wasm32-unknown-unknown.stable.rust-std
@@ -24,6 +25,7 @@
         pkgs.neovim
         pkgs.bacon
         pkgs.openssl
+        pkgs.chromium
       ];
 
       nativeBuildInputs = [

@@ -1,42 +1,27 @@
 body {
-    background-color: #0f1116;
-    color: #ffffff;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    margin: 20px;
+    font-family: 'Terminal', sans-serif;
+    font-smooth: never;
+    -webkit-font-smoothing: none;
+    -moz-osx-font-smoothing: grayscale;
+    
+    /* Forces the browser to use "nearest neighbor" scaling */
+    image-rendering: pixelated;
+    image-rendering: crisp-edges;
 }
 
-#hero {
-    margin: 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+.bar_code_font {
+    font-family: 'barcode font', sans-serif;
 }
 
-#links {
-    width: 400px;
-    text-align: left;
-    font-size: x-large;
-    color: white;
-    display: flex;
-    flex-direction: column;
+.lines_font {
+    font-family: 'DS-Terminal', sans-serif;
 }
 
-#links a {
-    color: white;
-    text-decoration: none;
-    margin-top: 20px;
-    margin: 10px 0px;
-    border: white 1px solid;
-    border-radius: 5px;
-    padding: 10px;
+.black_dropshadow {
+    box-shadow: 1rem 1rem black;
 }
 
-#links a:hover {
-    background-color: #1f1f1f;
-    cursor: pointer;
+.custom-scroll-area {
+    scrollbar-color: transparent transparent;
 }
 
-#header {
-    max-width: 1200px;
-}
