@@ -1,10 +1,38 @@
-use dioxus::prelude::*;
+use dioxus::{logger::tracing, prelude::*};
 
 #[derive(Debug, Default, Clone, Copy)]
 pub struct ScrollInfo {
     pub top: i32,
     pub height: i32,
     pub screen: i32,
+}
+
+pub fn on_mount_scrollable(evt: Event<MountedData>, mut scroll: Signal<ScrollInfo>) {
+    spawn(async move {
+        let d: &MountedData = &evt.data();
+
+        let scrollable_size = d.get_scroll_size().await.unwrap();
+        let height = scrollable_size.height as i32;
+        let scrollable_rect = d.get_client_rect().await.unwrap();
+        let screen = scrollable_rect.height() as i32;
+        tracing::debug!("scroll info: {}, {}", height, screen);
+        *scroll.write() = ScrollInfo {
+            top: 0,
+            height,
+            screen,
+        };
+    });
+}
+
+pub fn on_scroll_scrollable(evt: Event<ScrollData>, mut scroll: Signal<ScrollInfo>) {
+    let top = evt.data().scroll_top() as i32;
+    let height = evt.data().scroll_height();
+    let screen = evt.data().client_height();
+    *scroll.write() = ScrollInfo {
+        top,
+        height,
+        screen,
+    };
 }
 
 #[component]

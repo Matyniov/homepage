@@ -1,15 +1,12 @@
-use dioxus::{logger::tracing, prelude::*};
+use dioxus::prelude::*;
 use std::fmt::Display;
 
 use crate::router::Route;
 
-pub fn nav_element(
-    route: Route,
-    text: impl Display,
-) -> Element {
+pub fn nav_element(route: Route, text: impl Display) -> Element {
     rsx! {
         Link {
-            class: "bar_code_font text-6xl lg:text-8xl p-1 hover:bg-yellow-300 hover:text-black",
+            class: "bar_code_font text-6xl lg:text-8xl p-1 hover:bg-yellow-300 hover:text-black hover:cursor-pointer",
             active_class: "bar_code_font text-7xl lg:text-9xl bg-yellow-300 text-black",
             to: route,
             "{text}"
@@ -25,7 +22,7 @@ pub fn Navbar() -> Element {
             p { class: "lg:hidden text-black text-sm border-2 border-black bg-yellow-300 border-dotted m-2 p-2",
                 "This site is best experienced on desktop :3"
             }
-            div { class: "lg:h-screen lg:min-h-220 flex items-center justify-center",
+            div { class: "lg:h-screen lg:min-h-220 flex items-center justify-center sticky",
                 nav {
                     id: "navbar",
                     class: "bg-cyan-200 text-blue-800 pl-1 pr-1 pb-1 black_dropshadow m-5",

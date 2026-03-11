@@ -3,7 +3,7 @@ body {
     font-smooth: never;
     -webkit-font-smoothing: none;
     -moz-osx-font-smoothing: grayscale;
-    
+
     /* Forces the browser to use "nearest neighbor" scaling */
     image-rendering: pixelated;
     image-rendering: crisp-edges;
@@ -17,6 +17,14 @@ body {
     font-family: 'DS-Terminal', sans-serif;
 }
 
+.bold_serif {
+    font-family: 'Libre Bodoni', serif;
+}
+
+.content_serif {
+    font-family: 'Jomolhari', serif;
+}
+
 .black_dropshadow {
     box-shadow: 1rem 1rem black;
 }
@@ -24,4 +32,3 @@ body {
 .custom-scroll-area {
     scrollbar-color: transparent transparent;
 }
-

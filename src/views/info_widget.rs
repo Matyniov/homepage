@@ -1,10 +1,13 @@
 use dioxus::prelude::*;
 
-use crate::{apis::{
-    geolocation::{LocationResponse, get_location},
-    ip::{get_ip, ip_to_string},
-    weather::get_weather,
-}, views::popup_widget::{BorderStyles, Popup}};
+use crate::{
+    apis::{
+        geolocation::{get_location, LocationResponse},
+        ip::{get_ip, ip_to_string},
+        weather::get_weather,
+    },
+    views::popup_widget::{BorderStyles, Popup},
+};
 
 #[derive(Debug)]
 struct Infos {
@@ -86,7 +89,7 @@ pub fn InfoWidget() -> Element {
                     None => loading_screen,
                 }
             }
-        
+
         }
     };
 

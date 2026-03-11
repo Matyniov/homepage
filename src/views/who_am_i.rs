@@ -1,58 +1,71 @@
 use dioxus::{logger::tracing, prelude::*};
 
 use crate::views::{
-    popup_widget::{BorderStyles, Popup},
-    scroll_bar::ScrollInfo,
-    CustomScrollBar,
+    CustomScrollBar, popup_widget::{BorderStyles, Popup}, scroll_bar::{ScrollInfo, on_mount_scrollable, on_scroll_scrollable}
 };
 
 #[component]
 pub fn WhoAmI() -> Element {
-    let mut scroll = use_signal(|| ScrollInfo::default());
+    let scroll = use_signal(ScrollInfo::default);
 
     rsx! {
         div { id: "container", class: "lg:h-screen relative",
-
-            div {
+            // class: "ani-load-init",
+            main {
                 id: "scrollable",
-                class: "lg:h-screen lg:overflow-y-auto custom-scroll-area flex flex-col items-center pt-15",
-                onmount: move |element| {
-                    spawn(async move {
-                        let d: &MountedData = &element.data();
+                class: "lg:h-screen lg:overflow-y-auto custom-scroll-area flex flex-shrink-0 justify-center",
 
-                        let scrollable_size = d.get_scroll_size().await.unwrap();
-                        let height = scrollable_size.height as i32;
-                        let scrollable_rect = d.get_client_rect().await.unwrap();
-                        let screen = scrollable_rect.height() as i32;
-                        tracing::debug!("scroll info: {}, {}", height, screen);
-                        *scroll.write() = ScrollInfo {
-                            top: 0,
-                            height,
-                            screen,
-                        };
-                    });
+                onmount: move |evt| {
+                    on_mount_scrollable(evt, scroll);
                 },
                 onscroll: move |evt| {
-                    let top = evt.data().scroll_top() as i32;
-                    let height = evt.data().scroll_height() as i32;
-                    let screen = evt.data().client_height() as i32;
-                    *scroll.write() = ScrollInfo { top, height, screen };
+                    on_scroll_scrollable(evt, scroll);
                 },
                 div { class: "hidden lg:block",
                     CustomScrollBar { scroll }
                 }
-                div { class: "w-3/4 ",
-                    Popup {
-                        title: "Vessel.",
-                        main_col: "white",
-                        bg_col: "gray-500",
-                        border_style: BorderStyles::Double,
-                        h1 { class: "lines_font text-5xl", "Who is the man behind the digital veil?" }
+
+                article { class: "flex flex-col flex-shrink-0 items-center gap-10 max-w-2/3 text-black content_serif border-20 border-white bg-amber-100",
+                    div { class: "pt-30 pb-30 bg-red-600 flex flex-col items-center text-white",
+
+                        img {
+                            class: "bg-yellow-400 w-100 rounded-full overflow-hidden p-2 border-10 border-white",
+                            box_shadow: "",
+                            src: asset!("/assets/imgs/maty_bust.png"),
+                        }
+                        h1 { class: "bold_serif text-5xl/15 text-center w-2/3 break-keep border-r-2 border-l-2",
+                            "QUOTATIONS FROM CHAIRMAN "
+                            span { class: "tracking-widest whitespace-nowrap", "MAO-TSYNIOV" }
+                        }
                     }
+
+                    h2 { class: " text-2xl", "Introduction" }
+
+                    p { "Hello world!" }
+
+                    h2 { class: "", "On communism and socialism" }
+
+                    p { "Based. Poor execution." }
+
+                    h2 { class: "content_serif", "On capitalism" }
+
+                    p { "Hella cringe." }
                 
                 }
             }
-        
         }
     }
 }
+
+// details { class: "group",
+//     summary { class: "flex cursor-pointer list-none items-center justify-between font-medium text-gray-900",
+//         "What is Dioxus?"
+//         // A simple chevron that rotates when the parent is 'open'
+//         span { class: "transition group-open:rotate-180",
+//             "▼"
+//         }
+//     }
+//     div { class: "mt-3 text-gray-600 leading-relaxed",
+//         "Dioxus is a portable, performant, and ergonomic framework for building cross-platform user interfaces in Rust."
+//     }
+// }

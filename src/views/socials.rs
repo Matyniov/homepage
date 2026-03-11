@@ -1,4 +1,4 @@
-use crate::views::{InfoWidget, popup_widget::Popup};
+use crate::views::{popup_widget::Popup, InfoWidget};
 use crate::{
     router::Route,
     views::{gif_links, popup_widget::BorderStyles},
@@ -45,7 +45,7 @@ pub fn Socials() -> Element {
 
     rsx! {
         // Canvas
-        div {
+        main {
             class: "relative flex items-center justify-center lg:h-screen lg:min-h-220 lg:w-full mt-5 lg:mt-0 p-5",
 
             class: "ani-load-init",
@@ -173,7 +173,7 @@ pub fn Socials() -> Element {
                         p { "I take photos!" }
                         p { "(even some on film)" }
                         img { src: gif_links::KODAK }
-                    
+
                     }
                 }
             }
@@ -196,7 +196,7 @@ pub fn Socials() -> Element {
                             "Dont bother trying to pronounce my name, just call me Maty"
                         }
                         img { src: gif_links::CLIPPY_NOTE }
-                    
+
                     }
                 }
             }

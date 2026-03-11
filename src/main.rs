@@ -19,6 +19,8 @@ fn App() -> Element {
 
         for link_str in [
             "https://fonts.cdnfonts.com/css/barcode-font",
+            "https://fonts.cdnfonts.com/css/libre-bodoni-2",
+            "https://fonts.cdnfonts.com/css/jomolhari-3",
             "https://fonts.cdnfonts.com/css/ds-terminal",
             "https://fonts.cdnfonts.com/css/terminal",
         ]

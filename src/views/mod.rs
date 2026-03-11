@@ -5,12 +5,12 @@ pub use socials::Socials;
 mod navbar;
 pub use navbar::Navbar;
 
-mod three_d;
-pub use three_d::Art;
+mod art;
+pub use art::Art;
 mod contact;
 pub use contact::Contact;
-mod photos;
-pub use photos::Projects;
+mod projects;
+pub use projects::Projects;
 mod who_am_i;
 pub use who_am_i::WhoAmI;
 mod under_construction;
