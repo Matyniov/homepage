@@ -2820,6 +2820,8 @@ dependencies = [
  "dioxus",
  "reqwest 0.13.2",
  "serde",
+ "wasm-bindgen",
+ "web-sys",
 ]
 
 [[package]]

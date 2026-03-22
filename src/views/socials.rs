@@ -11,7 +11,7 @@ const BDAY: NaiveDate = NaiveDate::from_ymd_opt(2002, 5, 30).unwrap();
 const TWITTER_URL: &str = "https://x.com/matyniov_arts";
 const BLUESKY_URL: &str = "https://bsky.app/profile/matyniov.bsky.social";
 const FLICKR_URL: &str = "https://www.flickr.com/people/204101766@N05/";
-const STEAM_URL: &str = "https://steamcommunity.com/id/matyniov";
+const GITHUB_URL: &str = "https://github.com/Matyniov";
 const YOUTUBE_URL: &str = "https://www.youtube.com/@Matyniov";
 
 #[component]
@@ -117,9 +117,9 @@ pub fn Socials() -> Element {
                         }
                         li {
                             SocialLink {
-                                title: "Steam",
-                                icon: asset!("/assets/svgs/steam.svg"),
-                                link: STEAM_URL,
+                                title: "Github",
+                                icon: asset!("/assets/svgs/github.svg"),
+                                link: GITHUB_URL,
                                 accent: "bg-gray-100",
                             }
                         }
@@ -173,7 +173,7 @@ pub fn Socials() -> Element {
                         p { "I take photos!" }
                         p { "(even some on film)" }
                         img { src: gif_links::KODAK }
-
+                    
                     }
                 }
             }
@@ -196,7 +196,7 @@ pub fn Socials() -> Element {
                             "Dont bother trying to pronounce my name, just call me Maty"
                         }
                         img { src: gif_links::CLIPPY_NOTE }
-
+                    
                     }
                 }
             }

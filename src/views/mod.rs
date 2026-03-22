@@ -9,6 +9,7 @@ mod art;
 pub use art::Art;
 mod contact;
 pub use contact::Contact;
+pub use contact::encode;
 mod projects;
 pub use projects::Projects;
 mod who_am_i;
@@ -19,5 +20,7 @@ pub mod gif_links;
 mod info_widget;
 pub use info_widget::InfoWidget;
 
-mod scroll_bar;
-pub use scroll_bar::CustomScrollBar;
+mod art_chapters;
+
+mod open_graph;
+pub use open_graph::{OgProps, OpenGraph};

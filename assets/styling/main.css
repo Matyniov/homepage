@@ -1,12 +1,6 @@
 body {
     font-family: 'Terminal', sans-serif;
-    font-smooth: never;
-    -webkit-font-smoothing: none;
-    -moz-osx-font-smoothing: grayscale;
 
-    /* Forces the browser to use "nearest neighbor" scaling */
-    image-rendering: pixelated;
-    image-rendering: crisp-edges;
 }
 
 .bar_code_font {
@@ -29,6 +23,42 @@ body {
     box-shadow: 1rem 1rem black;
 }
 
+.fancy_font {
+    font-family: 'Lato', sans-serif;
+}
+.fancy_title {
+  font-family: "Instrument Serif", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.roman_font {
+    font-family: 'Times New Roman', Times, serif;
+}
+
 .custom-scroll-area {
     scrollbar-color: transparent transparent;
+}
+
+.dorsa {
+  font-family: "Dorsa", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.japanese {
+  font-family: "Noto Sans JP", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.crisp {
+    font-smooth: never;
+    -webkit-font-smoothing: none;
+    -moz-osx-font-smoothing: grayscale;
+
+    /* Forces the browser to use "nearest neighbor" scaling */
+    image-rendering: pixelated;
+    image-rendering: crisp-edges;
 }

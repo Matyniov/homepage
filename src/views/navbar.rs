@@ -6,8 +6,8 @@ use crate::router::Route;
 pub fn nav_element(route: Route, text: impl Display) -> Element {
     rsx! {
         Link {
-            class: "bar_code_font text-6xl lg:text-8xl p-1 hover:bg-yellow-300 hover:text-black hover:cursor-pointer",
-            active_class: "bar_code_font text-7xl lg:text-9xl bg-yellow-300 text-black",
+            class: "bar_code_font text-8xl p-1 hover:bg-yellow-300 hover:text-black hover:cursor-pointer",
+            active_class: "bar_code_font text-9xl bg-yellow-300 text-black",
             to: route,
             "{text}"
         }
@@ -40,12 +40,12 @@ pub fn Navbar() -> Element {
                             {nav_element(Route::Contact {}, "004.CONTACT.")}
                         }
 
-                        fieldset { class: "text-xs md:text:regular border-t-3 mt-auto ml-auto mr-auto mb-auto w-20 md:w-40 overflow-hidden lg:mt-15",
+                        fieldset { class: "text-base border-t-3 my-10 ml-auto mr-auto size-40 overflow-hidden hidden lg:block",
                             legend { class: "text-center pl-2 pr-2 text-cyan-200 bg-blue-800",
                                 "Hello world::"
                             }
                             img {
-                                class: "h-full w-full object-top",
+                                class: "p-2 h-auto w-full object-top",
                                 image_rendering: "pixelated",
                                 src: asset!("assets/gif/globe.gif"),
                             }

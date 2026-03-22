@@ -8,9 +8,11 @@ edition = "2021"
 
 [dependencies]
 chrono = "0.4.44"
-dioxus = { version = "0.7.1", features = ["router"] }
+dioxus = { version = "0.7.1", features = ["router", "html"] }
 reqwest = {version = "0.13.2", features = ["json"] }
 serde = { version = "1.0.228", features = ["derive"] }
+wasm-bindgen = "0.2.114"
+web-sys = { version = "0.3.91", features = ["HtmlAudioElement"]}
 
 [features]
 default = ["web"]
