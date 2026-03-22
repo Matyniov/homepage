@@ -109,7 +109,7 @@ pub fn AudioPlayer(class: Option<String>, source: Asset, title_text: Element) ->
                     }
                 }
             }
-        
+
         }
     }
 }

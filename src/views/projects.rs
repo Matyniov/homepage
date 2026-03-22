@@ -10,7 +10,7 @@ pub fn Projects() -> Element {
                 "Something beautiful is going to happen"
             }
             {under_construction_widget()}
-        
+
         }
     }
 }

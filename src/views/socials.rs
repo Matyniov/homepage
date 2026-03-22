@@ -173,7 +173,7 @@ pub fn Socials() -> Element {
                         p { "I take photos!" }
                         p { "(even some on film)" }
                         img { src: gif_links::KODAK }
-                    
+
                     }
                 }
             }
@@ -196,7 +196,7 @@ pub fn Socials() -> Element {
                             "Dont bother trying to pronounce my name, just call me Maty"
                         }
                         img { src: gif_links::CLIPPY_NOTE }
-                    
+
                     }
                 }
             }

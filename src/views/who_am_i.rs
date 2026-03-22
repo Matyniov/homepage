@@ -28,7 +28,7 @@ pub fn WhoAmI() -> Element {
                         p { class: "japanese translate origin-bottom-left scale-x-120",
                             "同性愛者、ゲイ"
                         }
-                    
+
                     }
                     img {
                         src: asset!("/assets/gif/digital man 2.gif"),
@@ -42,7 +42,7 @@ pub fn WhoAmI() -> Element {
                     src: asset!("/assets/imgs/bust.png"),
                     class: "hidden lg:block grayscale absolute right-0 top-1/2 top-1/2 -translate-y-1/2 size-170",
                 }
-            
+
             }
 
             div { class: "relative flex flex-col bg-white lg:transparent p-8 black_dropshadow lg:shadow-none",
@@ -52,7 +52,7 @@ pub fn WhoAmI() -> Element {
                         "\"Something something communism\""
                     }
                     p { class: "text-right content_serif italic text-2xl", "- Lenin" }
-                
+
                 }
             }
 

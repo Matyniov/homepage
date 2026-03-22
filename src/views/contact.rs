@@ -87,7 +87,7 @@ pub fn Contact() -> Element {
                         },
                     }
                 }
-            
+
             }
         }
         div {
@@ -126,7 +126,7 @@ mod tests {
 
     #[test]
     fn encode_run() {
-        let steam = "https://steamcommunity.com/id/matyniov/";
+        let steam = "Type the secret here!";
         dbg!(encode(steam));
     }
 

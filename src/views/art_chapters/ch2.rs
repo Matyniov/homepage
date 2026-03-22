@@ -1,7 +1,10 @@
 use dioxus::prelude::*;
 
-use crate::views::art_chapters::shared::{
-    ChapterPlaque, MatyPlaque, FIGURE_LEFT, FIGURE_RIGHT, FIGURE_SHARED, LINK, PICTURE,
+use crate::{
+    compressors::image_default,
+    views::art_chapters::shared::{
+        ChapterPlaque, MatyPlaque, FIGURE_LEFT, FIGURE_RIGHT, FIGURE_SHARED, LINK, PICTURE,
+    },
 };
 
 #[component]
@@ -18,7 +21,7 @@ pub fn Ch2() -> Element {
         figure { class: "{FIGURE_SHARED} {FIGURE_RIGHT}",
             img {
                 class: PICTURE,
-                src: asset!("/assets/imgs/works/minecraft 2 c.2019.png"),
+                src: asset!("/assets/imgs/works/minecraft 2 c.2019.png", image_default()),
             }
             MatyPlaque {
                 title: "Minecraft venus",
@@ -33,7 +36,7 @@ pub fn Ch2() -> Element {
         figure { class: "{FIGURE_SHARED} {FIGURE_LEFT}",
             img {
                 class: PICTURE,
-                src: asset!("/assets/imgs/furasy/V1 c.2020.png"),
+                src: asset!("/assets/imgs/furasy/V1 c.2020.png", image_default()),
             }
             MatyPlaque {
                 title: "V1",
@@ -52,7 +55,7 @@ pub fn Ch2() -> Element {
         figure { class: "{FIGURE_SHARED} {FIGURE_RIGHT}",
             img {
                 class: PICTURE,
-                src: asset!("/assets/imgs/furasy/V2 c.2021.png"),
+                src: asset!("/assets/imgs/furasy/V2 c.2021.png", image_default()),
             }
             MatyPlaque {
                 title: "V2",
@@ -68,7 +71,7 @@ pub fn Ch2() -> Element {
         figure { class: "{FIGURE_SHARED} {FIGURE_LEFT}",
             img {
                 class: PICTURE,
-                src: asset!("/assets/imgs/works/gamma c.2021.png"),
+                src: asset!("/assets/imgs/works/gamma c.2021.png", image_default()),
             }
             MatyPlaque {
                 title: "Station Gamma - 3D",
@@ -83,7 +86,7 @@ pub fn Ch2() -> Element {
         figure { class: "{FIGURE_SHARED} {FIGURE_RIGHT}",
             img {
                 class: PICTURE,
-                src: asset!("/assets/imgs/works/steve c.2021.png"),
+                src: asset!("/assets/imgs/works/steve c.2021.png", image_default()),
             }
             MatyPlaque {
                 title: "Steven",
@@ -97,7 +100,7 @@ pub fn Ch2() -> Element {
         figure { class: "{FIGURE_SHARED} {FIGURE_LEFT}",
             img {
                 class: PICTURE,
-                src: asset!("/assets/imgs/works/station c.2022.png"),
+                src: asset!("/assets/imgs/works/station c.2022.png", image_default()),
             }
             MatyPlaque {
                 title: "Gdynia główna",
@@ -121,7 +124,7 @@ pub fn Ch2() -> Element {
         figure { class: "{FIGURE_SHARED} {FIGURE_RIGHT}",
             img {
                 class: PICTURE,
-                src: asset!("/assets/imgs/works/zbiornik c.2023.png"),
+                src: asset!("/assets/imgs/works/zbiornik c.2023.png", image_default()),
             }
             MatyPlaque {
                 title: "Storage tank",

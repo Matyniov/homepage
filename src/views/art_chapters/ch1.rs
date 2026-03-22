@@ -1,7 +1,10 @@
 use dioxus::prelude::*;
 
-use crate::views::art_chapters::shared::{
-    ChapterPlaque, MatyPlaque, FIGURE_LEFT, FIGURE_RIGHT, FIGURE_SHARED, LINK, PICTURE,
+use crate::{
+    compressors::image_default,
+    views::art_chapters::shared::{
+        ChapterPlaque, MatyPlaque, FIGURE_LEFT, FIGURE_RIGHT, FIGURE_SHARED, LINK, PICTURE,
+    },
 };
 
 #[component]
@@ -50,7 +53,7 @@ pub fn Ch1() -> Element {
         figure { class: "{FIGURE_SHARED} {FIGURE_RIGHT}",
             img {
                 class: PICTURE,
-                src: asset!("/assets/imgs/works/christmas c.2016.png"),
+                src: asset!("/assets/imgs/works/christmas c.2016.png", image_default()),
             }
             MatyPlaque {
                 title: "Christmas card",
@@ -67,7 +70,7 @@ pub fn Ch1() -> Element {
         figure { class: "{FIGURE_SHARED} {FIGURE_LEFT}",
             img {
                 class: PICTURE,
-                src: asset!("/assets/imgs/works/bunkier c.2016.png"),
+                src: asset!("/assets/imgs/works/bunkier c.2016.png", image_default()),
             }
             MatyPlaque {
                 title: "Bunker",
@@ -82,7 +85,7 @@ pub fn Ch1() -> Element {
         figure { class: "{FIGURE_SHARED} {FIGURE_RIGHT}",
             img {
                 class: PICTURE,
-                src: asset!("/assets/imgs/works/rocket c.2016.png"),
+                src: asset!("/assets/imgs/works/rocket c.2016.png", image_default()),
             }
             MatyPlaque {
                 title: "Escape pods",
@@ -97,7 +100,7 @@ pub fn Ch1() -> Element {
         figure { class: "{FIGURE_SHARED} {FIGURE_LEFT}",
             img {
                 class: PICTURE,
-                src: asset!("/assets/imgs/works/laurenty c2016.png"),
+                src: asset!("/assets/imgs/works/laurenty c2016.png", image_default()),
             }
             MatyPlaque {
                 title: "Laurenty 1984",
@@ -110,7 +113,7 @@ pub fn Ch1() -> Element {
         figure { class: "{FIGURE_SHARED} {FIGURE_RIGHT}",
             img {
                 class: PICTURE,
-                src: asset!("/assets/imgs/works/station gamma not 3d c.2017.png"),
+                src: asset!("/assets/imgs/works/station gamma not 3d c.2017.png", image_default()),
             }
             MatyPlaque {
                 title: "Station Gamma",
@@ -124,7 +127,7 @@ pub fn Ch1() -> Element {
         figure { class: "{FIGURE_SHARED} {FIGURE_LEFT}",
             img {
                 class: PICTURE,
-                src: asset!("/assets/imgs/works/dom2 c.2017.png"),
+                src: asset!("/assets/imgs/works/dom2 c.2017.png", image_default()),
             }
             MatyPlaque {
                 title: "Residence",
@@ -138,7 +141,7 @@ pub fn Ch1() -> Element {
         figure { class: "{FIGURE_SHARED} {FIGURE_RIGHT}",
             img {
                 class: PICTURE,
-                src: asset!("/assets/imgs/works/banquet c.2017.jpg"),
+                src: asset!("/assets/imgs/works/banquet c.2017.jpg", image_default()),
             }
             MatyPlaque {
                 title: "Banquet",
@@ -154,7 +157,7 @@ pub fn Ch1() -> Element {
         figure { class: "{FIGURE_SHARED} {FIGURE_LEFT}",
             img {
                 class: PICTURE,
-                src: asset!("/assets/imgs/works/space combat c.2017.jpg"),
+                src: asset!("/assets/imgs/works/space combat c.2017.jpg", image_default()),
             }
             MatyPlaque {
                 title: "Space combat scene",
@@ -167,7 +170,7 @@ pub fn Ch1() -> Element {
         figure { class: "{FIGURE_SHARED} {FIGURE_RIGHT}",
             img {
                 class: PICTURE,
-                src: asset!("/assets/imgs/works/minecraft c.2017.png"),
+                src: asset!("/assets/imgs/works/minecraft c.2017.png", image_default()),
             }
             MatyPlaque {
                 title: "Minecraft venus",
@@ -181,7 +184,7 @@ pub fn Ch1() -> Element {
         figure { class: "{FIGURE_SHARED} {FIGURE_LEFT}",
             img {
                 class: PICTURE,
-                src: asset!("/assets/imgs/works/alien c.2018.jpg"),
+                src: asset!("/assets/imgs/works/alien c.2018.jpg", image_default()),
             }
             MatyPlaque {
                 title: "Weightless",

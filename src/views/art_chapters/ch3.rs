@@ -1,5 +1,8 @@
-use crate::views::art_chapters::shared::{
-    ChapterPlaque, MatyPlaque, FIGURE_LEFT, FIGURE_RIGHT, FIGURE_SHARED, LINK, PICTURE,
+use crate::{
+    compressors::image_default,
+    views::art_chapters::shared::{
+        ChapterPlaque, MatyPlaque, FIGURE_LEFT, FIGURE_RIGHT, FIGURE_SHARED, LINK, PICTURE,
+    },
 };
 use dioxus::prelude::*;
 
@@ -17,7 +20,7 @@ pub fn Ch3() -> Element {
         figure { class: "{FIGURE_SHARED} {FIGURE_LEFT}",
             img {
                 class: PICTURE,
-                src: asset!("/assets/imgs/furasy/V3 c.2024.png"),
+                src: asset!("/assets/imgs/furasy/V3 c.2024.png", image_default()),
             }
             MatyPlaque {
                 title: "V3",
@@ -32,7 +35,7 @@ pub fn Ch3() -> Element {
         figure { class: "{FIGURE_SHARED} {FIGURE_RIGHT}",
             img {
                 class: PICTURE,
-                src: asset!("/assets/imgs/furasy/V4 c.2025.png"),
+                src: asset!("/assets/imgs/furasy/V4 c.2025.png", image_default()),
             }
             MatyPlaque {
                 title: "V4",
@@ -51,7 +54,7 @@ pub fn Ch3() -> Element {
         figure { class: "{FIGURE_SHARED} {FIGURE_LEFT}",
             img {
                 class: PICTURE,
-                src: asset!("/assets/imgs/furasy/V5 c.2025.png"),
+                src: asset!("/assets/imgs/furasy/V5 c.2025.png", image_default()),
             }
             MatyPlaque {
                 title: "V5",
@@ -73,7 +76,7 @@ pub fn Ch3() -> Element {
         figure { class: "{FIGURE_SHARED} {FIGURE_RIGHT}",
             img {
                 class: PICTURE,
-                src: asset!("/assets/imgs/works/most c.2026.png"),
+                src: asset!("/assets/imgs/works/most c.2026.png", image_default()),
             }
             MatyPlaque {
                 title: "A bridge too far",
@@ -97,7 +100,7 @@ pub fn Ch3() -> Element {
         figure { class: "{FIGURE_SHARED} {FIGURE_LEFT}",
             img {
                 class: PICTURE,
-                src: asset!("/assets/imgs/works/le gun c.2026.png"),
+                src: asset!("/assets/imgs/works/le gun c.2026.png", image_default()),
             }
             MatyPlaque {
                 title: "Whispell promotional material",
@@ -120,7 +123,7 @@ pub fn Ch3() -> Element {
         figure { class: "{FIGURE_SHARED} {FIGURE_RIGHT}",
             img {
                 class: PICTURE,
-                src: asset!("/assets/imgs/furasy/V6 c.2026.png"),
+                src: asset!("/assets/imgs/furasy/V6 c.2026.png", image_default()),
             }
             MatyPlaque {
                 title: "V6",
