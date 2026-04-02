@@ -1,6 +1,6 @@
 use dioxus::prelude::*;
 
-use crate::views::{Art, Contact, InfoWidget, Navbar, Projects, Socials, WhoAmI};
+use crate::views::{Art, Contact, InfoWidget, RoutedSPA, Projects, Socials, WhoAmI};
 
 #[component]
 fn Test() -> Element {
@@ -12,7 +12,7 @@ fn Test() -> Element {
 #[derive(Debug, Clone, Routable, PartialEq)]
 #[rustfmt::skip]
 pub enum Route {
-    #[layout(Navbar)]
+    #[layout(RoutedSPA)]
         #[route("/")]
         Socials {},
         #[route("/contact")]

@@ -1,36 +1,33 @@
 use reqwest::get;
 use serde::Deserialize;
 
-use crate::apis::ip::ip_to_string;
-const LOC_URL: &str = "https://api.techniknews.net/ipgeo/";
+const LOC_URL: &str = "https://get.geojs.io/v1/ip/geo.json";
 
 #[derive(Default, Debug, Clone, PartialEq, Deserialize)]
 #[serde(rename_all = "camelCase")]
 pub struct LocationResponse {
-    // pub status: String,
-    // pub continent: String,
-    pub country: String,
-    pub country_code: String,
-    // pub region_name: String,
+    pub accuracy: i64,
+    #[serde(rename = "area_code")]
+    pub area_code: String,
+    pub asn: i64,
     pub city: String,
-    // pub zip: String,
-    pub lat: f64,
-    pub lon: f64,
-    // pub timezone: String,
-    // pub currency: String,
-    // pub isp: String,
-    // pub org: String,
-    // #[serde(rename = "as")]
-    // pub as_field: String,
-    // pub reverse: String,
-    // pub mobile: bool,
-    // pub proxy: bool,
-    // pub hosting: bool,
-    // pub ip: String,
-    // pub cached: bool,
+    #[serde(rename = "continent_code")]
+    pub continent_code: String,
+    pub country: String,
+    #[serde(rename = "country_code")]
+    pub country_code: String,
+    #[serde(rename = "country_code3")]
+    pub country_code3: String,
+    pub ip: String,
+    pub latitude: String,
+    pub longitude: String,
+    pub organization: String,
+    #[serde(rename = "organization_name")]
+    pub organization_name: String,
+    pub region: String,
+    pub timezone: String,
 }
 
-pub async fn get_location(ip: (u8, u8, u8, u8)) -> Option<LocationResponse> {
-    let url = format!("{LOC_URL}/{}", ip_to_string(ip));
-    get(url).await.ok()?.json().await.ok()
+pub async fn get_location() -> Option<LocationResponse> {
+    get(LOC_URL).await.ok()?.json().await.ok()
 }

@@ -63,7 +63,7 @@ pub struct Details {
 const WEATHER_URL: &str = "https://api.met.no/weatherapi/locationforecast/2.0/compact?";
 
 pub async fn get_weather(location: &LocationResponse) -> Option<String> {
-    let url = format!("{WEATHER_URL}lat={}&lon={}", location.lat, location.lon);
+    let url = format!("{WEATHER_URL}lat={}&lon={}", location.latitude, location.longitude);
     let weather: WeatherResponse = get(url).await.ok()?.json().await.ok()?;
     Some(format!(
         "{:0.1}C",
