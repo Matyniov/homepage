@@ -30,7 +30,7 @@ pub fn Popup(
         div {
             class: "bg-{bg_col} pl-2 pr-2 pb-2 black_dropshadow text-{main_col}",
             class: if title.is_none() { "pt-2" },
-            fieldset { class: "lg:relative border-{width} p-5 border-{main_col} {style}",
+            fieldset { class: "xl:relative border-{width} p-5 border-{main_col} {style}",
                 if let Some(title) = title.clone() {
                     legend { class: "text-l pl-2 pr-2 bg-{main_col} text-{bg_col}", {title} }
                 }

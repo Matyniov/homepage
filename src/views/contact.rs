@@ -56,7 +56,7 @@ pub fn Contact() -> Element {
 
     rsx! {
         div {
-            class: "flex items-center justify-center lg:h-screen",
+            class: "flex items-center justify-center xl:h-screen",
             class: if *human.read() { "hidden" },
             Popup {
                 // bg-red-700
@@ -67,13 +67,13 @@ pub fn Contact() -> Element {
                 main_col: "white",
                 border_style: BorderStyles::Double,
                 title: "Identify your form",
-                div { class: "flex flex-col justify-center items-center lg:p-20 text-xl",
+                div { class: "flex flex-col justify-center items-center xl:p-20 xl:text-2xl",
                     p { "Are you of flesh and bone" }
                     p { "or steel and silicone?" }
                     p { class: "mt-10", "Cast below: MAN or MACHINE?" }
                     input {
                         placeholder: ">MAN / MACHINE<",
-                        class: "mt-10 w-80 p-2 black_dropshadow text-center hover:bg-yellow-300 bg-white text-black",
+                        class: "mt-10 xl:w-80 p-2 black_dropshadow text-center hover:bg-yellow-300 bg-white text-black",
                         oninput: move |value| {
                             let input: String = value.value();
                             if input.to_lowercase() == "man" {
@@ -87,12 +87,12 @@ pub fn Contact() -> Element {
                         },
                     }
                 }
-
+            
             }
         }
         div {
             class: if !*human.read() { "hidden" },
-            class: "flex items-center justify-center lg:h-screen",
+            class: "flex items-center justify-center xl:h-screen",
             Popup {
                 // bg-green-950
                 // text-green-950
@@ -103,17 +103,20 @@ pub fn Contact() -> Element {
                 border_style: BorderStyles::Double,
                 title: "__HTTP_200_ACCESS_GRANTED__",
 
-                table { class: "[&_td]:p-2",
-                    tr { class: "font-bold border-b-2",
-                        td { "__COMM" }
-                        td { "__PORT" }
-                    }
-                    for (k , v) in credentials.read().clone() {
-                        tr {
-                            td { {k} }
-                            td { {v} }
+                div { class: "overflow-x-scroll w-70 xl:w-120 xl:overflow-auto",
+                    table { class: "[&_td]:p-2",
+                        tr { class: "font-bold border-b-2",
+                            td { "__COMM" }
+                            td { "__PORT" }
+                        }
+                        for (k , v) in credentials.read().clone() {
+                            tr {
+                                td { {k} }
+                                td { {v} }
+                            }
                         }
                     }
+                
                 }
             }
         }

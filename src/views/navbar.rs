@@ -15,19 +15,19 @@ pub fn nav_element(route: Route, text: impl Display) -> Element {
 }
 
 #[component]
-pub fn Navbar() -> Element {
+pub fn RoutedSPA() -> Element {
     rsx! {
-        div { class: "flex flex-col flex items-center lg:items-start justify-center lg:flex-row bg-blue-800 h-fit",
+        div { class: "flex flex-col flex items-center xl:items-start justify-start xl:flex-row bg-blue-800 overflow-x-hidden",
 
-            p { class: "lg:hidden text-black text-sm border-2 border-black bg-yellow-300 border-dotted m-2 p-2",
+            p { class: "xl:hidden text-black text-sm border-2 border-black bg-yellow-300 border-dotted m-2 p-2",
                 "This site is best experienced on desktop :3"
             }
-            div { class: "lg:h-screen lg:min-h-220 flex items-center justify-center sticky",
+            div { class: "xl:h-screen xl:min-h-220 flex items-center justify-center",
                 nav {
                     id: "navbar",
                     class: "bg-cyan-200 text-blue-800 pl-1 pr-1 pb-1 black_dropshadow m-5",
-                    fieldset { class: "flex lg:flex-col lg:h-full border-9 border-double border-blue-800 gap-1 items-center justify-center",
-                        legend { class: "text-center text-base lg:text-xl pl-2 pr-2 text-cyan-200 bg-blue-800",
+                    fieldset { class: "flex xl:flex-col xl:h-full border-9 border-double border-blue-800 gap-1 items-center justify-center",
+                        legend { class: "text-center text-base xl:text-xl pl-2 pr-2 text-cyan-200 bg-blue-800",
                             "NAVIGATION::"
                         }
                         div {
@@ -40,7 +40,7 @@ pub fn Navbar() -> Element {
                             {nav_element(Route::Contact {}, "004.CONTACT.")}
                         }
 
-                        fieldset { class: "text-base border-t-3 my-10 ml-auto mr-auto size-40 overflow-hidden hidden lg:block",
+                        fieldset { class: "text-base border-t-3 my-10 ml-auto mr-auto size-40 overflow-hidden hidden xl:block",
                             legend { class: "text-center pl-2 pr-2 text-cyan-200 bg-blue-800",
                                 "Hello world::"
                             }
@@ -54,11 +54,11 @@ pub fn Navbar() -> Element {
                 }
             }
 
-            div { class: "lg:w-full", Outlet::<Route> {} }
+            div { class: "xl:w-full", Outlet::<Route> {} }
 
-            div { class: "flex justify-between items-center mt-10 lg:mt-0 lg:[writing-mode:vertical-rl] text-cyan-200 p-1 lg:h-screen",
-                p { class: "hidden lg:block text-9xl", "╳┼┼╳" }
-                p { class: "text-9xl  bar_code_font", "MATYNIOV.HOMEPAGE" }
+            div { class: "flex justify-between items-center mt-10 xl:mt-0 xl:[writing-mode:vertical-rl] text-cyan-200 p-1 xl:h-screen  bg-blue-800",
+                p { class: "hidden xl:block text-9xl", "╳┼┼╳" }
+                p { class: "text-7xl xl:text-9xl  bar_code_font", "MATYNIOV.HOMEPAGE" }
             }
         }
     }

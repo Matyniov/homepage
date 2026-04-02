@@ -3,7 +3,7 @@ mod socials;
 pub use socials::Socials;
 
 mod navbar;
-pub use navbar::Navbar;
+pub use navbar::RoutedSPA;
 
 mod art;
 pub use art::Art;

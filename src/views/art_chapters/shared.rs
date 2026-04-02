@@ -13,7 +13,7 @@ pub fn Plaque(
     rsx! {
         div {
             id: "{title}",
-            class: "p-10 lg:max-w-100 items-start text-justify fancy_font bg-white shadow-2xl",
+            class: "p-10 xl:max-w-100 items-start text-justify fancy_font bg-white shadow-2xl",
             class: if let Some(class) = &class { "{class}" },
             h1 { class: "text-3xl", {artist_name} }
             p { class: "text-sm", {artist_info} }
@@ -59,7 +59,7 @@ pub fn ChapterPlaque(
 ) -> Element {
     rsx! {
         Plaque {
-            class: "lg:max-w-180",
+            class: "xl:max-w-180",
             artist_name: "",
             artist_info: "",
             title,
@@ -70,8 +70,8 @@ pub fn ChapterPlaque(
     }
 }
 pub const FIGURE_SHARED: &str =
-    "flex flex-col items-center lg:p-10 bg-gray-200 lg:gap-10 shadow-xl";
-pub const FIGURE_LEFT: &str = "lg:flex-row-reverse mr-auto";
-pub const FIGURE_RIGHT: &str = "lg:flex-row ml-auto";
-pub const PICTURE: &str = "lg:max-h-150 lg:max-w-200 shadow-2xl lg:border-40 border-white";
+    "flex flex-col items-center xl:p-10 bg-gray-200 xl:gap-10 shadow-xl";
+pub const FIGURE_LEFT: &str = "xl:flex-row-reverse mr-auto";
+pub const FIGURE_RIGHT: &str = "xl:flex-row ml-auto";
+pub const PICTURE: &str = "xl:max-h-150 xl:max-w-200 shadow-2xl xl:border-40 border-white";
 pub const LINK: &str = "text-blue-800 underline";

@@ -93,7 +93,7 @@ pub fn AudioPlayer(class: Option<String>, source: Asset, title_text: Element) ->
                 r#loop: true,
                 onmount: cast_as_audio_element,
             }
-            div { class: "flex flex-col lg:flex-row gap-5 items-center justify-center",
+            div { class: "flex flex-col xl:flex-row gap-5 items-center justify-center",
                 {title_text}
                 div { class: "flex gap-5 items-center justify-center",
                     button { onclick: toggle_play, {get_icon(*is_playing.read())} }
@@ -109,7 +109,7 @@ pub fn AudioPlayer(class: Option<String>, source: Asset, title_text: Element) ->
                     }
                 }
             }
-
+        
         }
     }
 }
@@ -128,8 +128,8 @@ pub fn Art() -> Element {
                 }
             },
         }
-        div { class: "lg:p-8 flex flex-col items-center gap-10 ani-entrance",
-            div { class: "fancy_title text-4xl lg:text-8xl text-white tracking-widest skew-y-6 skew-x-20 p-4 bg-black mt-10 mb-10 shadow-xl",
+        div { class: "xl:p-8 flex flex-col items-center gap-10 ani-entrance",
+            div { class: "fancy_title text-4xl xl:text-8xl text-white tracking-widest skew-y-6 skew-x-20 p-4 bg-black mt-10 mb-10 shadow-xl",
                 "-galeria sztuki-"
             }
             Ch1 {}
@@ -141,7 +141,7 @@ pub fn Art() -> Element {
                 decided to discover some of mine through this art."
             }
 
-            div { class: "lg:mt-20" }
+            div { class: "xl:mt-20" }
         }
     }
 }

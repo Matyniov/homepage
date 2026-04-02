@@ -20,7 +20,7 @@ body {
 }
 
 .black_dropshadow {
-    box-shadow: 1rem 1rem black;
+    box-shadow: 8px 8px black;
 }
 
 .fancy_font {

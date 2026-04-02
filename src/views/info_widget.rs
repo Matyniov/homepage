@@ -18,11 +18,7 @@ struct Infos {
 
 async fn get_infos() -> Infos {
     let ip = get_ip().await;
-    let loc: Option<LocationResponse> = if let Some(ip) = ip {
-        get_location(ip).await
-    } else {
-        None
-    };
+    let loc: Option<LocationResponse> = get_location().await;
     let weather: Option<String> = if let Some(loc) = &loc {
         get_weather(loc).await
     } else {
@@ -42,8 +38,9 @@ fn ip_element(ip: (u8, u8, u8, u8)) -> Element {
 
 #[component]
 fn loc_element(loc: LocationResponse) -> Element {
-    let coords_format = format!("__CORDS=LAT_{}xLON_{}", loc.lat, loc.lon);
+    let coords_format = format!("__POS=LAT_{}xLON_{}", loc.latitude, loc.longitude);
     let place_format = format!("__PLACE={}@{}", loc.city, loc.country);
+    let ISP = format!("__ISP={}", loc.organization_name);
     rsx! {
         div {
             p { {coords_format} }
@@ -89,7 +86,7 @@ pub fn InfoWidget() -> Element {
                     None => loading_screen,
                 }
             }
-
+        
         }
     };
 

@@ -46,17 +46,17 @@ pub fn Socials() -> Element {
     rsx! {
         // Canvas
         main {
-            class: "relative flex items-center justify-center lg:h-screen lg:min-h-220 lg:w-full mt-5 lg:mt-0 p-5",
+            class: "relative flex items-center justify-center xl:h-screen xl:min-h-220 xl:w-full mt-5 xl:mt-0 p-5",
 
             class: "ani-load-init",
-            div { class: "z-7 lg:pr-10",
+            div { class: "z-7 xl:pr-10",
                 Popup {
                     bg_col: "cyan-200",
                     main_col: "blue-800",
                     border_style: BorderStyles::Double,
                     title: "Profile",
                     div {
-                        class: "lg:absolute lg:right-0 lg:top-1/2 lg:-translate-y-1/3 lg:translate-x-1/4 black_dropshadow z-10",
+                        class: "xl:absolute xl:right-0 xl:top-1/2 xl:-translate-y-1/3 xl:translate-x-1/4 black_dropshadow z-10",
                         class: "ani-load-trans-first",
                         img {
                             image_rendering: "pixelated",
@@ -67,12 +67,12 @@ pub fn Socials() -> Element {
                         class: "black_dropshadow",
                         class: "ani-load-trans-first",
                         div { class: "bg-blue-800 text-cyan-200 p-2",
-                            h1 { class: "lines_font text-5xl md:text-7xl lg:text-9xl italic lg:mr-8",
+                            h1 { class: "lines_font text-5xl md:text-7xl xl:text-9xl italic xl:mr-8",
                                 "Matyniov"
                             }
                             p { class: "text-right text-xs md:text-xl", "a.k.a. Maty" }
                         }
-                        div { class: "flex flex-col lg:flex-row items-center justify-between gap-2 border-3 p-2 mb-10",
+                        div { class: "flex flex-col xl:flex-row items-center justify-between gap-2 border-3 p-2 mb-10",
                             p { "■ ■ ■ ■ ■" }
                             p { "HE/HIM" }
                             p { "lvl.{age}{cake}" }
@@ -81,7 +81,7 @@ pub fn Socials() -> Element {
                         }
                     }
                     ul {
-                        class: "w-full lg:w-1/2",
+                        class: "w-full xl:w-1/2",
                         class: "ani-load-trans-first",
                         li {
                             SocialLink {
@@ -144,7 +144,7 @@ pub fn Socials() -> Element {
             }
 
             div {
-                class: "hidden lg:block absolute right-1/30 bottom-2/15  z-5 p-5 bg-gray-900 black_dropshadow",
+                class: "hidden xl:block absolute right-1/30 bottom-2/15  z-5 p-5 bg-gray-900 black_dropshadow",
                 class: "ani-load-trans-second",
                 fieldset { class: "border-b-3 text-cyan-300 flex flex-col items-center justify-center",
                     legend { class: "text-center lines_font text-2xl", "⇶ The digital man" }
@@ -158,7 +158,7 @@ pub fn Socials() -> Element {
             }
 
             div {
-                class: "hidden lg:block absolute left-1/20 bottom-3/20",
+                class: "hidden xl:block absolute left-1/20 bottom-3/20",
                 class: "ani-load-trans-second",
                 Popup {
                     // bg-pink-700
@@ -173,13 +173,13 @@ pub fn Socials() -> Element {
                         p { "I take photos!" }
                         p { "(even some on film)" }
                         img { src: gif_links::KODAK }
-
+                    
                     }
                 }
             }
 
             div {
-                class: "hidden lg:block absolute left-1/40 top-3/20",
+                class: "hidden xl:block absolute left-1/40 top-3/20",
                 class: "ani-load-trans-second",
 
                 Popup {
@@ -196,13 +196,13 @@ pub fn Socials() -> Element {
                             "Dont bother trying to pronounce my name, just call me Maty"
                         }
                         img { src: gif_links::CLIPPY_NOTE }
-
+                    
                     }
                 }
             }
 
             div {
-                class: "hidden lg:block absolute top-1/20 right-0",
+                class: "hidden xl:block absolute top-1/20 right-0",
                 class: "ani-load-trans-second",
                 InfoWidget {}
             }
